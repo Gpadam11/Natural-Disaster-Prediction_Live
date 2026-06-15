@@ -11,7 +11,7 @@ earthquake_model = joblib.load("earthquake_model_25.pkl")
 # Load world cities data
 @st.cache_data
 def load_city_data():
-    return pd.read_csv("worldcities.csv")[["country", "city", "lat", "lng"]]
+    return pd.read_csv("worldcities.csv", encoding="latin1")[["country", "city", "lat", "lng"]]
 
 cities_df = load_city_data()
 
